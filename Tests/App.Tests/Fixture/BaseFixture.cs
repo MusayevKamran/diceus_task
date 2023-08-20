@@ -13,16 +13,11 @@ namespace App.Tests.Fixture;
 /// </summary>
 public abstract class BaseFixture
 {
-    protected BaseFixture()
-    {
-        ServiceProvider = ServiceCollectionFake.CreateServiceCollectionFake().BuildServiceProvider();
-    }
-    
     /// <summary>
     /// Service provider
     /// </summary>
-    public IServiceProvider ServiceProvider { get; set; }
-    
+    public IServiceProvider ServiceProvider { get; set; } = ServiceCollectionFake.CreateServiceCollectionFake().BuildServiceProvider();
+
     /// <summary>
     ///     Register in memory db context
     /// </summary>

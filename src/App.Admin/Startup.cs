@@ -43,12 +43,8 @@ namespace App.Admin
 
             // MVC Settings
             services.AddControllersWithViews();
-
-
+            
             services.AddRazorPages();
-
-            // Authentication & Authorization
-            services.AddAuthSetup(Configuration);
 
             // .NET Native DI Abstraction
             services.AddProjectSetup();

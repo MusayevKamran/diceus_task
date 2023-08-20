@@ -28,29 +28,5 @@ namespace App.Admin.Configurations
                 })
                 .AddEntityFrameworkStores<AppIdentityDbContext>();
         }
-
-        /// <summary>
-        /// Adds and configures the authentication services using configuration options.
-        /// Sets up Facebook and Google authentication using settings from the configuration.
-        /// </summary>
-        /// <param name="services">Specifies the contract for a collection of service descriptors.</param>
-        /// <param name="configuration">Represents a set of key/value application configuration properties.</param>
-        /// <exception cref="ArgumentNullException">Thrown when services are null.</exception>
-        public static void AddAuthSetup(this IServiceCollection services, IConfiguration configuration)
-        {
-            if (services == null) throw new ArgumentNullException(nameof(services));
-
-            services.AddAuthentication()
-                .AddFacebook(o =>
-                {
-                    o.AppId = configuration["Authentication:Facebook:AppId"];
-                    o.AppSecret = configuration["Authentication:Facebook:AppSecret"];
-                })
-                .AddGoogle(googleOptions =>
-                {
-                    googleOptions.ClientId = configuration["Authentication:Google:ClientId"];
-                    googleOptions.ClientSecret = configuration["Authentication:Google:ClientSecret"];
-                });
-        }
     }
 }
