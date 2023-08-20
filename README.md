@@ -8,3 +8,9 @@ Installing a project in a Docker container
    ``` powershell
    docker-compose --env-file ./config/docker.development.env up -d
    ```
+
+![img.png](img.png)
+
+![img_1.png](img_1.png)
+
+![img_2.png](img_2.png)
