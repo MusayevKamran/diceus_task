@@ -9,8 +9,8 @@ Installing a project in a Docker container
    docker-compose --env-file ./config/docker.development.env up -d
    ```
 
-![img.png](img.png)
+![img.png](config/images/img.png)
 
-![img_1.png](img_1.png)
+![img_1.png](config/images/img_1.png)
 
-![img_2.png](img_2.png)
+![img_2.png](config/images/img_2.png)
