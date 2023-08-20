@@ -7,8 +7,11 @@ body {
 }
 
 .header {
-  overflow: hidden;
-  background-color: #f1f1f1;
+  overflow: hidden;   
+  margin-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #dee2e6!important;
 }
 
 .header a {
