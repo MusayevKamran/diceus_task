@@ -1,4 +1,4 @@
-<!--#include file="api/list-api.asp"-->
+<!--#include file="api/list-contract-api.asp"-->
 
 <!DOCTYPE html>
 <html>
@@ -30,16 +30,16 @@
         // Get the table element
         var table = document.getElementById('data-table');
 
-// Loop through the array and populate the table
-dataArray.forEach(item => {
-    const row = table.insertRow();
-    const cells = ['phone', 'name', 'surname', 'email'];
-
-        cells.forEach(cellKey => {
-            const cell = row.insertCell();
-            cell.textContent = item[cellKey];
-        });
-    });
+        // Loop through the array and populate the table
+        dataArray.forEach(item => {
+            const row = table.insertRow();
+            const cells = ['phone', 'name', 'surname', 'email'];
+        
+                cells.forEach(cellKey => {
+                    const cell = row.insertCell();
+                    cell.textContent = item[cellKey];
+                });
+            });
     </script>
 
   </script>
