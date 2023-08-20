@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  deciusservice:
+    container_name: deciusservice
+    image: diceus.azurecr.io/deciusservice
+    build:
+      args:
+        - APP_PORT=${APP_PORT}
+        - APP_NAME=${APP_NAME}
+      context: .
+    ports:
+      - ${APP_PORT}:${APP_PORT}
+    environment:
+      - ASPNETCORE_ENVIRONMENT=${APP_ENV}
+        
+  deciusserviceapi:
+    container_name: deciusserviceapi
+    image: diceus.azurecr.io/deciusserviceapi
+    build:
+      args:
+        - APP_PORT=${API_APP_PORT}
+        - APP_NAME=${API_APP_NAME}
+      context: .
+    ports:
+      - ${API_APP_PORT}:${API_APP_PORT}
+    environment:
+      - ASPNETCORE_ENVIRONMENT=${API_APP_ENV}
+
