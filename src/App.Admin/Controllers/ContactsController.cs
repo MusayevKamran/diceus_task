@@ -67,7 +67,7 @@ public class ContactsController : BaseController
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Bind("UserId,Phone,Name,Surname,Email")] Contacts contacts)
+    public async Task<IActionResult> Create([Bind("Phone,Name,Surname,Email")] Contacts contacts)
     {
         if (ModelState.IsValid)
         {
@@ -103,17 +103,13 @@ public class ContactsController : BaseController
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int id, [Bind("UserId,Phone,Name,Surname,Email")] Contacts contacts)
+    public async Task<IActionResult> Edit(int id, [Bind("Phone,Name,Surname,Email")] Contacts contacts)
     {
-        if (id != contacts.Id)
-        {
-            return NotFound();
-        }
-
         if (ModelState.IsValid)
         {
             try
             {
+                contacts.Id = id;
                 _contactsService.Update(contacts);
                 await _unitOfWork.SaveAsync();
             }
